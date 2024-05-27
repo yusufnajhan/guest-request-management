@@ -1,0 +1,1 @@
+this directory used to store cloud computing section of guest request management
