@@ -1,1 +1,0 @@
-this directory used to store machine learning section of guest request management
