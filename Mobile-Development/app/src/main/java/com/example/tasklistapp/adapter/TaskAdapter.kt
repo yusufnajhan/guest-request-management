@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.tasklistapp.data.response.UserItem
+import com.example.tasklistapp.data.response.RequestResponseItem
 import com.example.tasklistapp.databinding.ItemTaskBinding
 
-class TaskAdapter : ListAdapter<UserItem, TaskAdapter.MyViewHolder>(DIFF_CALLBACK) {
+class TaskAdapter : ListAdapter<RequestResponseItem, TaskAdapter.MyViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val binding = ItemTaskBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -17,9 +17,9 @@ class TaskAdapter : ListAdapter<UserItem, TaskAdapter.MyViewHolder>(DIFF_CALLBAC
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val user = getItem(position)
-        holder.bind(user, holder)
-        val username = user.login
+        val task = getItem(position)
+        holder.bind(task, holder)
+        val message = task.message
 
 //        holder.itemView.setOnClickListener{
 //            val detailIntent = Intent(holder.itemView.context, DetailActivity::class.java)
@@ -28,17 +28,17 @@ class TaskAdapter : ListAdapter<UserItem, TaskAdapter.MyViewHolder>(DIFF_CALLBAC
 //        }
     }
     class MyViewHolder(val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(user: UserItem, holder: MyViewHolder){
-            binding.tvItemUsername.text = "${user.login}"
+        fun bind(task: RequestResponseItem, holder: MyViewHolder){
+            binding.tvItemMessage.text = "${task.message}"
         }
     }
 
     companion object {
-        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<UserItem>() {
-            override fun areItemsTheSame(oldItem: UserItem, newItem: UserItem): Boolean {
+        val DIFF_CALLBACK = object : DiffUtil.ItemCallback<RequestResponseItem>() {
+            override fun areItemsTheSame(oldItem: RequestResponseItem, newItem: RequestResponseItem): Boolean {
                 return oldItem == newItem
             }
-            override fun areContentsTheSame(oldItem: UserItem, newItem: UserItem): Boolean {
+            override fun areContentsTheSame(oldItem: RequestResponseItem, newItem: RequestResponseItem): Boolean {
                 return oldItem == newItem
             }
         }
