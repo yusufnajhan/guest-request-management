@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tasklistapp.activity.DetailActivity
 import com.example.tasklistapp.data.response.RequestResponseItem
 import com.example.tasklistapp.databinding.ItemTaskBinding
 
@@ -19,17 +20,19 @@ class TaskAdapter : ListAdapter<RequestResponseItem, TaskAdapter.MyViewHolder>(D
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val task = getItem(position)
         holder.bind(task, holder)
-        val message = task.message
+//        val message = task.message
+        val id = task.id
 
-//        holder.itemView.setOnClickListener{
-//            val detailIntent = Intent(holder.itemView.context, DetailActivity::class.java)
-//            detailIntent.putExtra(DetailActivity.USERNAME, username)
-//            holder.itemView.context.startActivity(detailIntent)
-//        }
+        holder.itemView.setOnClickListener{
+            val detailIntent = Intent(holder.itemView.context, DetailActivity::class.java)
+            detailIntent.putExtra(DetailActivity.ID, id)
+            holder.itemView.context.startActivity(detailIntent)
+        }
     }
     class MyViewHolder(val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(task: RequestResponseItem, holder: MyViewHolder){
             binding.tvItemMessage.text = "${task.message}"
+            binding.tvItemId.text = "${task.id}"
         }
     }
 

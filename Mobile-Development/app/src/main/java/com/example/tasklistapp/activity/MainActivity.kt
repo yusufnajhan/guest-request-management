@@ -17,5 +17,10 @@ class MainActivity : AppCompatActivity() {
             val listTaskIntent = Intent(this@MainActivity, ListTaskActivity::class.java)
             startActivity(listTaskIntent)
         }
+
+        binding.btnInputMessage.setOnClickListener {
+            val inputMessageIntent = Intent(this@MainActivity, InputMessageActivity::class.java)
+            startActivity(inputMessageIntent)
+        }
     }
 }

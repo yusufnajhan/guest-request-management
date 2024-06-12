@@ -3,5 +3,21 @@
     <string name="username">UserName</string>
     <string name="list_task">List Task</string>
     <string name="input_message">Input Message</string>
+    <string name="title">Title</string>
+    <string name="message">Message from the guest which is needs to be sent to the onsite team as a request. Finally showing it as a task list</string>
+    <string name="date">2024-06-11</string>
+    <string name="status">Status: Completed</string>
+    <string name="change_status">PROGRESS THIS TASK</string>
+    <string name="message_title">Input Your Message</string>
+    <string name="send_message">SEND MESSAGE</string>
+    <string name="inputan_pesan">Kepada Manajemen,
+        Nama saya adalah John Doe dan saya telah melakukan reservasi di penginapan Anda dari tanggal 20 hingga 25 Juni.
+        Saya menulis pesan ini untuk mengajukan beberapa permintaan khusus terkait dengan rencana menginap saya.
+        Saya berharap bisa mendapatkan kamar di lantai atas yang memiliki balkon dengan pemandangan laut, karena saya sangat menghargai suasana yang tenang dan indah.
+        Selain itu, saya memiliki kebutuhan diet tertentu yang memerlukan penyimpanan dan persiapan makanan secara khusus, oleh karena itu,
+        saya membutuhkan kamar yang dilengkapi dengan kulkas kecil dan microwave.
+        Saya sangat berharap permintaan ini dapat dipenuhi demi kenyamanan dan kelancaran masa menginap saya di penginapan Anda.
+        Terima kasih atas perhatian dan bantuannya.
+        Hormat saya, John Doe</string>
 
 </resources>
