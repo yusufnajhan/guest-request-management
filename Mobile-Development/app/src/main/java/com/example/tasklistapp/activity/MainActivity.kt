@@ -13,12 +13,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnListTask.setOnClickListener {
+        binding.viewList.setOnClickListener {
             val listTaskIntent = Intent(this@MainActivity, ListTaskActivity::class.java)
             startActivity(listTaskIntent)
         }
 
-        binding.btnInputMessage.setOnClickListener {
+        binding.viewInput.setOnClickListener {
             val inputMessageIntent = Intent(this@MainActivity, InputMessageActivity::class.java)
             startActivity(inputMessageIntent)
         }

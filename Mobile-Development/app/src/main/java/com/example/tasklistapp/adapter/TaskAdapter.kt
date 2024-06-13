@@ -31,8 +31,19 @@ class TaskAdapter : ListAdapter<RequestResponseItem, TaskAdapter.MyViewHolder>(D
     }
     class MyViewHolder(val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(task: RequestResponseItem, holder: MyViewHolder){
-            binding.tvItemMessage.text = "${task.message}"
-            binding.tvItemId.text = "${task.id}"
+            val maxLength = 40
+            val message = task.message
+            val displayMessage = if(message.length > maxLength) {
+                "${message.substring(0, maxLength)}..."
+            } else {
+                message
+            }
+
+            binding.tvItemMessage.text = displayMessage
+            binding.tvItemId.text = buildString {
+                append("Task #")
+                append(task.id)
+            }
         }
     }
 

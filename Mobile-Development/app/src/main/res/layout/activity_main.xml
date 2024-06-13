@@ -6,33 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity">
 
-    <Button
-        android:id="@+id/btnListTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:overScrollMode="never"
-        android:scrollbarSize="0dp"
-        android:text="@string/list_task"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btnInputMessage"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <include
+        android:id="@+id/topBar"
+        layout="@layout/header_layout"/>
 
-    <Button
-        android:id="@+id/btnInputMessage"
+    <LinearLayout
+        android:id="@+id/viewList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:overScrollMode="never"
-        android:scrollbarSize="0dp"
-        android:text="@string/input_message"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btnListTask"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="192dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittext_border">
+
+        <ImageView
+            android:id="@+id/imgList"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/list_logo"
+            />
+
+        <TextView
+            android:id="@+id/textList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/list_task"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/viewInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:elevation="4dp"
+        android:background="@drawable/edittext_border">
+
+        <ImageView
+            android:id="@+id/imgInput"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/message_logo"
+            />
+
+        <TextView
+            android:id="@+id/textInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/input_message"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"/>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

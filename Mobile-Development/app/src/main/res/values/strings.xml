@@ -19,5 +19,7 @@
         Saya sangat berharap permintaan ini dapat dipenuhi demi kenyamanan dan kelancaran masa menginap saya di penginapan Anda.
         Terima kasih atas perhatian dan bantuannya.
         Hormat saya, John Doe</string>
+    <string name="guest_request_management">Guest Request Management</string>
+    <string name="enter_message">Enter your message here</string>
 
 </resources>
