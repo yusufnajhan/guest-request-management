@@ -2,6 +2,7 @@
 import com.example.tasklistapp.data.response.RequestBody
 import com.example.tasklistapp.data.response.RequestResponseItem
 import com.example.tasklistapp.data.response.RequestUpdate
+import com.example.tasklistapp.data.response.ResponseCreate
 import com.example.tasklistapp.data.response.ResponseUpdate
 import retrofit2.Call
 import retrofit2.http.Body
@@ -30,5 +31,5 @@ interface ApiService {
     @POST("requests")
     fun createRequest(
         @Body request: RequestBody
-    ): Call<ResponseUpdate>
+    ): Call<ResponseCreate>
 }
