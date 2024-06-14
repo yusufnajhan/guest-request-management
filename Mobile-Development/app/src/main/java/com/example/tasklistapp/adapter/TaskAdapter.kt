@@ -3,9 +3,11 @@ package com.example.tasklistapp.adapter
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.tasklistapp.R
 import com.example.tasklistapp.activity.DetailActivity
 import com.example.tasklistapp.data.response.RequestResponseItem
 import com.example.tasklistapp.databinding.ItemTaskBinding
@@ -43,6 +45,16 @@ class TaskAdapter : ListAdapter<RequestResponseItem, TaskAdapter.MyViewHolder>(D
             binding.tvItemId.text = buildString {
                 append("Task #")
                 append(task.id)
+            }
+
+            val context = itemView.context
+            when (task.status) {
+                "on progress" -> {
+                    binding.cardView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorSecondary))
+                }
+                "completed" -> {
+                    binding.cardView.setBackgroundColor(ContextCompat.getColor(context, R.color.colorLightGreen))
+                }
             }
         }
     }

@@ -8,4 +8,5 @@
     <color name="colorSecondaryVariant">#BBDEFB</color>
     <color name="colorGreen">#008000</color>
     <color name="colorLightGray">#CCCCCC</color>
+    <color name="colorLightGreen">#90EE90</color>
 </resources>

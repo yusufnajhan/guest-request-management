@@ -22,4 +22,11 @@
     <string name="guest_request_management">Guest Request Management</string>
     <string name="enter_message">Enter your message here</string>
 
+    <string-array name="status_filter_array">
+        <item>All</item>
+        <item>new</item>
+        <item>in progress</item>
+        <item>completed</item>
+    </string-array>
+
 </resources>
